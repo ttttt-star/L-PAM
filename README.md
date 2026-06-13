@@ -52,8 +52,8 @@ The main script supports three groups of experiments:
 
 ```text
 1. Main experiment
-2. Grid-size sensitivity experiment
-3. Worker/task number sensitivity experiment
+2. Worker/task number sensitivity experiment
+3. Grid-size sensitivity experiment
 ```
 
 ## 4. Main Experiment
