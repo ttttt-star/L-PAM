@@ -21,7 +21,7 @@ pip install numpy matplotlib
 
 ### Foursquare
 
-Download and extract the Foursquare dataset, then place the extracted files under a local folder, for example:
+Download and extract the Foursquare\Geolife\Gowalla dataset, then place the extracted files under a local folder, for example:
 
 ```text
 Your file location
@@ -45,7 +45,7 @@ You can also specify the dataset path manually using:
 
 ```text
 .
-├── SRR_Foursquare_Task_Assignment_formal_v1.py
+├── PAM_main.py
 ├── README.md
 └── results/
 ```
@@ -65,7 +65,7 @@ The main experiment evaluates different privacy mechanisms under multiple privac
 ### Run command
 
 ```bash
-python SRR_Foursquare_Task_Assignment_formal_v1.py ^
+python PAM_main.py ^
   --foursquare-root "Your file location" ^
   --grid-size 128 ^
   --num-workers 2000 ^
@@ -78,7 +78,7 @@ python SRR_Foursquare_Task_Assignment_formal_v1.py ^
 For Linux or macOS, use `\` instead of `^`:
 
 ```bash
-python SRR_Foursquare_Task_Assignment_formal_v1.py \
+python PAM_main.py \
   --foursquare-root "/path/to/foursquare" \
   --grid-size 128 \
   --num-workers 2000 \
@@ -130,45 +130,7 @@ perturbation_distance_vs_epsilon.png
 
 `summary_results.csv` reports the mean and standard deviation over repeated runs.
 
-## 5. Grid-Size Sensitivity Experiment
-
-The grid-size sensitivity experiment evaluates how different grid resolutions affect task-allocation utility.
-
-### Run command
-
-```bash
-python SRR_Foursquare_Task_Assignment_formal_v1.py ^
-  --foursquare-root "Your file location" ^
-  --run-grid-sensitivity ^
-  --grid-sensitivity-sizes 8,16,32 ^
-  --grid-sensitivity-epsilons 2.0,4.0,6.0,8.0 ^
-  --grid-sensitivity-repeats 5 ^
-  --num-workers 2000 ^
-  --num-tasks 1000 ^
-  --out-dir results/foursquare_grid_sensitivity
-```
-
-### Output files
-
-```text
-grid_sensitivity_combined_summary.csv
-grid_sensitivity_avg_distance.png
-```
-
-The script also creates separate subfolders for each grid size:
-
-```text
-results/foursquare_grid_sensitivity/
-├── grid_8/
-├── grid_16/
-├── grid_32/
-├── grid_sensitivity_combined_summary.csv
-└── grid_sensitivity_avg_distance.png
-```
-
-Each `grid_*` folder contains the raw and summary results for the corresponding grid size.
-
-## 6. Worker/Task Number Sensitivity Experiment
+## 5. Worker/Task Number Sensitivity Experiment
 
 The workload sensitivity experiment evaluates how the method performs when the number of workers or tasks changes.
 
@@ -185,7 +147,7 @@ It contains two parts:
 ### Run command
 
 ```bash
-python SRR_Foursquare_Task_Assignment_formal_v1.py ^
+python PAM_main.py ^
   --foursquare-root "Your file location" ^
   --run-workload-sensitivity ^
   --grid-size 128 ^
@@ -231,12 +193,51 @@ results/foursquare_workload_sensitivity/
 └── total_distance_vs_tasks.txt
 ```
 
+## 6. Grid-Size Sensitivity Experiment
+
+The grid-size sensitivity experiment evaluates how different grid resolutions affect task-allocation utility.
+
+### Run command
+
+```bash
+python PAM_main.py ^
+  --foursquare-root "Your file location" ^
+  --run-grid-sensitivity ^
+  --grid-sensitivity-sizes 8,16,32 ^
+  --grid-sensitivity-epsilons 2.0,4.0,6.0,8.0 ^
+  --grid-sensitivity-repeats 5 ^
+  --num-workers 2000 ^
+  --num-tasks 1000 ^
+  --out-dir results/foursquare_grid_sensitivity
+```
+
+### Output files
+
+```text
+grid_sensitivity_combined_summary.csv
+grid_sensitivity_avg_distance.png
+```
+
+The script also creates separate subfolders for each grid size:
+
+```text
+results/foursquare_grid_sensitivity/
+├── grid_8/
+├── grid_16/
+├── grid_32/
+├── grid_sensitivity_combined_summary.csv
+└── grid_sensitivity_avg_distance.png
+```
+
+Each `grid_*` folder contains the raw and summary results for the corresponding grid size.
+
+
 ## 7. Running Main Experiment and Workload Sensitivity Together
 
 The script can also run the main experiment first and then automatically run workload sensitivity.
 
 ```bash
-python SRR_Foursquare_Task_Assignment_formal_v1.py ^
+python PAM_main.py ^
   --foursquare-root "Your file location" ^
   --grid-size 128 ^
   --num-workers 2000 ^
@@ -281,20 +282,6 @@ min_lat,max_lat,min_lon,max_lon
 ```
 
 When this option is used, the script samples venues uniformly instead of using check-in counts as weights.
-
-### Include SRR-Local ablation
-
-```bash
---include-srr-local
-```
-
-This adds:
-
-```text
-SRR-Local-Greedy
-```
-
-to the output results.
 
 ### Include HSTGreedy diagnostic curves
 
@@ -351,12 +338,3 @@ Each experiment is repeated several times, and the final results are averaged in
 ## 11. Citation
 
 If you use this code, please cite our paper:
-
-```bibtex
-@article{lpam,
-  title   = {L-PAM: Layered Perturbation and Allocation Mechanism for Privacy-Preserving Spatial Crowdsourcing},
-  author  = {Anonymous},
-  journal = {TBD},
-  year    = {2026}
-}
-```
