@@ -19,21 +19,11 @@ pip install numpy matplotlib
 
 ### Foursquare
 
-Download and extract the Foursquare\Geolife\Gowalla dataset, then place the extracted files under a local folder, for example:
-
-```text
-Your file location
-```
+Download and extract the Foursquare\Geolife\Gowalla dataset, then place the extracted files under a local folder.
 
 The script will recursively search this folder for files whose names contain `venues` and `checkins`. It first reads venue latitude/longitude coordinates, and then samples locations according to venue check-in counts. If the check-in file cannot be parsed, the script falls back to uniform venue sampling.
 
-The default data path in the script is:
-
-```text
-Your file location
-```
-
-You can also specify the dataset path manually using:
+You can specify the dataset path manually using:
 
 ```bash
 --foursquare-root "Your file location"
