@@ -3,9 +3,9 @@
 
 This repository contains the experimental implementation of **L-PAM** for privacy-preserving task-location perturbation and task allocation in spatial crowdsourcing.
 
-The experiments evaluate the task-allocation utility of L-PAM under local differential privacy and compare it with representative LDP baselines, including GRR, HR, OLH, and an OUE-style unary-encoding baseline.
+The experiments evaluate the task-allocation utility of L-PAM under local differential privacy and compare it with representative LDP baselines, including GRR, HR, OLH, and an OUE baseline.
 
-> Note: In the current code, L-PAM is implemented as `SRR-SelfFirst-Greedy`, and the OUE-style baseline is named `PLDP-Greedy` in the output files.
+> Note: In the current code, L-PAM is implemented as `L-PAM`, and the OUE baseline is named `PLDP` in the output files.
 
 ## 1. Requirements
 
@@ -97,10 +97,10 @@ GRR-Greedy
 HR-Greedy
 OLH-Greedy
 PLDP-Greedy
-SRR-SelfFirst-Greedy
+L-PAM
 ```
 
-Here, `SRR-SelfFirst-Greedy` corresponds to the proposed L-PAM method.
+Here, `L-PAM` corresponds to the proposed L-PAM method.
 
 ### Main outputs
 
