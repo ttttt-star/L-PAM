@@ -3,7 +3,7 @@
 
 This repository contains the experimental implementation of **L-PAM** for privacy-preserving task-location perturbation and task allocation in spatial crowdsourcing.
 
-The experiments evaluate the task-allocation utility of L-PAM under local differential privacy and compare it with representative LDP baselines, including GRR, HR, OLH, and an OUE baseline.
+The experiments evaluate the task-allocation utility of L-PAM under local differential privacy and compare it with representative LDP baselines, including GRR, HR, OLH, and OUE baseline.
 
 > Note: In the current code, L-PAM is implemented as `L-PAM`, and the OUE baseline is named `PLDP` in the output files.
 
