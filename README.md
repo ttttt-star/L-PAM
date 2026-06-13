@@ -269,14 +269,6 @@ min_lat,max_lat,min_lon,max_lon
 
 When this option is used, the script samples venues uniformly instead of using check-in counts as weights.
 
-### Include HSTGreedy diagnostic curves
-
-```bash
---include-hst-greedy
-```
-
-This adds HST-based matching results for diagnostic comparison. It is disabled by default to keep the figures compact.
-
 ## 9. Result Metrics
 
 The main metrics include:
