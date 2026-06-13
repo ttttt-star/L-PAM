@@ -5,8 +5,6 @@ This repository contains the experimental implementation of **L-PAM** for privac
 
 The experiments evaluate the task-allocation utility of L-PAM under local differential privacy and compare it with representative LDP baselines, including GRR, HR, OLH, and OUE baseline.
 
-> Note: In the current code, L-PAM is implemented as `L-PAM`, and the OUE baseline is named `PLDP` in the output files.
-
 ## 1. Requirements
 
 The code is written in Python and only depends on common scientific computing packages.
@@ -96,7 +94,7 @@ The main experiment includes:
 GRR-Greedy
 HR-Greedy
 OLH-Greedy
-PLDP-Greedy
+OUE-Greedy
 L-PAM
 ```
 
