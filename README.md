@@ -315,4 +315,4 @@ Each experiment is repeated several times, and the final results are averaged in
 
 ## 11. Citation
 
-If you use this code, please cite our paper:
+If you use this code, please cite our paper.
