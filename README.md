@@ -88,8 +88,6 @@ OUE-Greedy
 L-PAM
 ```
 
-Here, `L-PAM` corresponds to the proposed L-PAM method.
-
 ### Main outputs
 
 After running the experiment, the output folder contains:
