@@ -1,5 +1,5 @@
 # L-PAM
-# L-PAM: Privacy-Preserving Task-Location Perturbation for Spatial Crowdsourcing
+# L-PAM: Layered Perturbation and Allocation Mechanism for Spatial Crowdsourcing under Grid-Level Local Differential Privacy
 
 This repository contains the experimental implementation of **L-PAM** for privacy-preserving task-location perturbation and task allocation in spatial crowdsourcing.
 
